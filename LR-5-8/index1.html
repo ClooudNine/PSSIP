@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"> <!--meta теги-->
+    <meta name="keywords" content="Ключевые слова">
+    <meta name="description" content="Описание">
+    <meta name="author" content="Сырель В.О">
+    <title>Вариант №22</title> <!--заголовок страницы-->
+    <link rel="stylesheet" href="style1.css"> <!--подключение таблицы стилей и иконок-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,700,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <header> <!--шапка сайта-->
+        <img style="height: 100%; width: auto" src="logo.png" alt="Logo"> <!--логотип-->
+        <nav> <!--навигационная панель-->
+            <a href="index1.html">Фиксированная</a>
+            <a href="index2.html">Резиновая</a>
+            <a href="index3.html">Адаптивная</a>
+            <a href="http://ggpk.by">Сайт колледжа</a>
+            <a href="https://www.instagram.com/polytech_grodno/">Instagram колледжа</a>
+        </nav>
+    </header>
+    <main> <!--основное содержание-->
+        <form id="form"> <!--форма-->
+            <div id="titleForm"> <!--заголовок формы-->
+                <div>Заказ обратного звонка</div>
+                <span class="material-symbols-outlined">close</span>
+            </div>
+            <div id="info"> <!--блоки ввода информации-->
+                <div class="infoFields"> <!--блок ввода имени-->
+                    <label for="name">Имя:<span style="color: red;"> *</span></label>
+                    <input type="text" id="name" name="name" required>
+                    <span style="font-size:10px; color: #e3856e;">Введите имя</span>
+                </div>
+                <div class="infoFields"> <!--блок ввода телефона-->
+                    <label for="phone">Телефон:<span style="color: red;"> *</span></label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <span style="font-size:10px; color: #e3856e;">Введите телефон</span>
+                </div>
+                <div class="infoFields"> <!--блок ввода email-->
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" style="border: 2px #d4d5d5 solid">
+                </div>
+            </div>
+            <div id="note"> <!--область примечания-->
+                <div class="infoFields"> <!--блок ввода примечания-->
+                    <label for="message" style="font-weight: normal">Примечание</label>
+                    <textarea id="message" name="message" rows="6"></textarea>
+                </div>
+            </div>
+            <div id="buttons"> <!--нижнаяя область формы (пометка об обязательных полях, кнопки отправки и закрытия формы)-->
+                <div style="font-size: 12px">Поля обозначенные символом <span style="color: red;"> *</span> - обязательны для заполнения</div>
+                <div id="btn">
+                    <button id="sendButton"><span class="material-symbols-outlined">mail</span>ОТПРАВИТЬ ЗАЯВКУ</button>
+                    <button id="closeButton">ЗАКРЫТЬ</button>
+                </div>
+            </div>
+        </form>
+        <section id="product"> <!--микросетка продукта-->
+            <div id="product_image"> <!--область изображения продукта и ценника-->
+                <div id="price">4 600 £</div>
+                <img src="product.png" alt="Product" style="
+                width: 350px;
+                height: auto;
+                margin-left: 20px;
+                transform: scale(-1, 1) rotate(10deg); /* отзеркаливание и поворот изображения */
+                filter: drop-shadow(5px 25px 20px); /* наложение тени под изображение */">
+            </div>
+            <div id="product_head"> <!--название продукта и его тип-->
+                <div style="font-family: 'Trebuchet MS', sans-serif; font-size: 20px;">БОТИНКИ PRADELLA</div>
+                <div style="font-family: 'Trebuchet MS', sans-serif; font-weight: normal; font-size: 10px">Зимняя обувь</div>
+            </div>
+            <div id="product_descr"> <!--описание продукта-->
+                <div style="font-size: 14px; font-weight: bold">Описание</div>
+                <div style="font-size: 14px">Ботинки из искусственной кожи от Pradella утеплены мехом.</div>
+                <div style="font-size: 14px">Детали: шнуровка на подъеме, утолщённая рифленая подошва.</div>
+            </div>
+            <div id="cart_buttons"> <!--область выбора размера и оформления заказа-->
+                <div id="chooseSize"> <!--блок выбора размера продукта-->
+                    <div style="font-size: 14px; font-weight: bold">Выберите размер</div>
+                    <div id="sizeButtons">
+                        <button>40</button>
+                        <button style="color: black; font-weight: bold; border: 2px solid #bb3b55">41</button>
+                        <button>42</button>
+                        <button>43</button>
+                        <button>44</button>
+                    </div>
+                </div>
+                <div id="btns"> <!--блок кнопок добавления товара в корзину и получения скидки-->
+                    <button style="
+                    border: none;
+                    background-color: #cf304b;
+                    color: white;
+                    height: 30px;
+                    width: 270px">Добавить в корзину</button>
+                    <button style="
+                    border: none;
+                    background-color: #d8d8d8;
+                    color: #6a6a6b;
+                    height: 30px;
+                    width: 270px">Получить скидку 10%</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer> <!--подвал сайта-->
+        <div> <!--ссылки на социальные сети-->
+            <a href="https://vk.com/clloud_nine">ВКонтакте</a>
+            <a href="https://www.instagram.com/cllooud_nine/">Instagram</a>
+            <a href="https://github.com/Krixxeless">GitHub</a>
+        </div>
+        <div style="color: orange">@2023 Сырель Владислав, ПЗТ-34</div> <!--копирайт-->
+    </footer>
+</body>
+</html>

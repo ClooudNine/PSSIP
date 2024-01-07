@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа №15 Часть 2</title>
+    <script>
+        function go(){
+            document.location.assign('http://www.wisdomweb.ru');
+        }
+        function dispMes(event)
+        {
+            document.getElementById('par').style.display='block';
+            document.getElementById('resultx').innerHTML=event.clientX;
+            document.getElementById('resulty').innerHTML=event.clientY;
+        }
+        function start(){
+            document.getElementById('par1').style.color='red';
+        }
+        function stop(){
+            document.getElementById('par1').style.color='black';
+        }
+        function changeColorOneClick() {
+            document.getElementById('par1').style.color = 'green';
+        }
+        function changeColorDoubleClick() {
+            document.getElementById('par2').style.color = 'red';
+        }
+        function setBorder() {
+            document.getElementById('par1').style.border = 'solid';
+            document.getElementById('par1').style.borderWidth = '1px';
+            document.getElementById('par1').style.borderColor = 'green';
+            document.getElementById('par2').style.border = 'solid';
+            document.getElementById('par2').style.borderWidth = '1px';
+            document.getElementById('par2').style.borderColor = 'green';
+        }
+        function setBorderDoubleClick() {
+            document.getElementById('par1').style.border = 'solid';
+            document.getElementById('par1').style.borderWidth = '1px';
+            document.getElementById('par1').style.borderColor = 'red';
+            document.getElementById('par2').style.border = 'solid';
+            document.getElementById('par2').style.borderWidth = '1px';
+            document.getElementById('par2').style.borderColor = 'red';
+        }
+        window.onload = function () {
+            alert("Добро пожаловать в задание 1");
+        }
+        window.addEventListener('beforeunload', function (event) {
+            event.preventDefault();
+            event.returnValue = 'Вы покидаете задание 1';
+        })
+        function timeMsg()
+        {
+            var t=setTimeout("alertMsg()",3000);
+        }
+        function alertMsg()
+        {
+            alert("Привет");
+        }
+        var c=0;
+        var t;
+        var timer_is_on=0;
+        function timedCount()
+        {
+            document.getElementById('txt').value=c;
+            c=c+1;
+            t=setTimeout("timedCount()",1000);
+        }
+        function doTimer()
+        {
+            if (!timer_is_on)
+            {
+                timer_is_on=1;
+                timedCount();
+            }
+        }
+        function stopTimer()
+        {
+            clearTimeout(t);
+        }
+        function startTime()
+        {
+            var today=new Date();
+            var h=today.getHours();
+            var m=today.getMinutes();
+            var s=today.getSeconds();
+// добавить нуль перед числами <10
+            m=checkTime(m);
+            s=checkTime(s);
+            document.getElementById('txt2').innerHTML=h+":"+m+":"+s;
+            t=setTimeout('startTime()',500);
+        }
+
+        function checkTime(i)
+        {
+            if (i<10)
+            {
+                i="0" + i;
+            }
+            return i;
+        }
+    </script>
+    <style>
+        #block {
+            height: 360px;
+            width: auto;
+            border: 2px dotted #f00;
+        }
+        p {
+            text-indent: 40px;
+            padding-left: 20px;
+        }
+        #par1
+        {
+            color:black;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body onclick='dispMes(event)' onload="startTime()">
+    <input type='button' value='Перейти на главную страницу нашего сайта' onclick='go()'/>
+    <div id='block'><p>Щелкните в любом месте правого окна редактора.</p>
+        <p id='par' style='display:none;' >Щелчок мыши был произведен по координатам:
+            <b><span id='resultx'> </span></b> пикс. по горизонтали от левой границы окна и <br />
+            <b><span id='resulty'> </span></b> пикс. по вертикали от верхней границы окна.</p>
+    </div>
+    <p id='par1' onmouseenter="this.style.color = 'black'" onmouseover='start()' onmouseout='stop()'>Наведите на меня курсор мыши.</p>
+    <p id='par2' onmouseenter="this.style.color = 'black'" >Для задания 1 Часть 2</p>
+    <button id="but1" onclick="changeColorOneClick()">Задание 1 Часть 1</button>
+    <button id="but2" ondblclick="changeColorDoubleClick()">Задание 1 Часть 2</button>
+    <button id="but3" onclick="setBorder()">Задание 1 Часть 4</button>
+    <button id="but4" ondblclick="setBorderDoubleClick()">Задание 1 Часть 5</button>
+    <form>
+        <input type="button" value="Показать сигнальное окно через 3 секунды" onClick="timeMsg()" />
+    </form>
+    <form>
+        <input type="button" value="Начать отсчет!" onClick="doTimer()">
+        <input type="button" value="Прекратить отсчет!" onClick="stopTimer()">
+        <input type="text" id="txt">
+    </form>
+    <p>Щелкните на кнопке выше. Поле ввода начнет отсчет до бесконечности, начиная с 0.</p>
+    <div id="txt2"></div>
+</body>
+</html>

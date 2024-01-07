@@ -1,0 +1,6 @@
+body { /* устанавливаем стили тегу body */
+    background-color: red; /* установка цвета фона */
+    font-family: Arial, sans-serif; /* установка шрифта */
+    font-size: 10pt; /* установка размера шрифта */
+    color: blue; /* установка цвета шрифта */
+}

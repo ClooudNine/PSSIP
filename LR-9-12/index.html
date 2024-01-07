@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вариант №14</title> <!--заголовок страницы-->
+    <meta name="author" content="Сырель В.О">
+    <script src="script.js"></script>
+    <script>
+        function getHoursAndMinutes() {
+            let now = new Date();
+            alert(now.getHours() + ":" + now.getMinutes());
+        }
+    </script>
+</head>
+<body>
+    <button onClick="getHoursAndMinutes()">Показать время</button>
+    <br>
+    <script>
+        let i = 0;
+	let br = document.createElement("br");
+        while(i < 33) {
+            document.write("группа ПЗТ ");
+            document.write("<br>");
+            i++;
+        }
+        let arr = [1, -2, -3, 4, 5];
+        let multiple = 1;
+        arr.forEach(item => {if(item > 0) {multiple *= item}});
+	alert("Произведение положительных элементов массива: " + multiple);
+    </script>
+    <br>
+    <button onClick="output(12, 2, 3)">Рассчёт по формуле</button>
+    <br>
+</body>
+</html>

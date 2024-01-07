@@ -1,0 +1,241 @@
+html, body { /* обнуление встроенных стилей */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tahoma, sans-serif;
+}
+
+a { /* стили для ссылок */
+    text-decoration: none;
+    border: 2px solid green;
+    border-radius: 20px;
+    background-color: green;
+    color: yellow;
+}
+
+body { /* стили тега body */
+    display: grid; /* задаём поведение сетки */
+    grid-template-rows: 100px 410px 103px; /* распределение строк в сетке */
+    grid-template-areas: /* области сетки */
+            "header"
+            "main"
+            "footer";
+}
+
+button { /* общие стили для кнопок */
+    cursor: pointer;
+}
+
+header { /* стили для шапки сайта */
+    grid-area: header;
+    background: red;
+    display: flex; /* задаём flex-контейнер */
+    justify-content: space-between; /* устанавливаем распределение пространства между и вокруг элементов контента вдоль главной оси */
+    align-items: center; /* устанавливаем выравнивание элементов контейнера */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+main { /* стили для основного содержания страницы */
+    grid-area: main; /* показываем область, к которой принадлежит контейнер */
+    display: grid;
+    grid-template-columns: 525px 755px; /* распределение колонок в сетке */
+    grid-template-areas:
+            "form product";
+    background: cyan;
+}
+
+#product { /* стили для сетки продукта */
+    background-color: white;
+    grid-area: product;
+    display: grid;
+    gap: 10px; /* отсутпы между элементами сетки */
+    grid-template-rows: 70px 170px 150px;
+    grid-template-columns: 450px 270px;
+    grid-template-areas:
+            "image head"
+            "image descr"
+            "image cart_buttons";
+}
+
+#price { /* стили для ценника товара */
+    margin-left: 330px;
+    margin-top: 20px;
+    background-color: #cf304b;
+    color: white;
+    font-weight: bold;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+#product_image { /* стили для области картинки товара */
+    grid-area: image;
+    background-color: #46474e;
+}
+
+#product_head { /* стили для области заголовка продукта */
+    grid-area: head;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 5px;
+    background-color: white;
+    font-weight: bold;
+}
+
+#product_descr { /* стили для области описания продукта */
+    grid-area: descr;
+    padding-top: 20px;
+    margin-left: 10px;
+    background-color: white;
+    border-bottom: 2px solid #f4f4f4;
+    border-top: 2px solid #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+}
+
+#cart_buttons { /* стили для области выбора размера и оформления заказа */
+    grid-area: cart_buttons;
+    display: flex;
+    flex-direction: column; /* расположение элементов в flex-контейнере */
+    margin-left: 10px;
+    gap: 15px;
+}
+
+#sizeButtons { /* стили для блока выбора размера */
+    display: flex;
+    justify-content: space-between;
+}
+
+#sizeButtons button { /* стили для кнопок блока выбора размера */
+    color: #c3c2c2;
+    border: 1px solid #f4f4f4;
+    background: white;
+    width: 30px;
+    height: 30px;
+}
+
+#chooseSize { /* стили для области описания продукта */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#btns { /* стили для кнопок оформления заказа */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    gap: 10px;
+}
+
+#form { /* стили для области формы */
+    grid-area: form;
+    display: grid;
+    grid-template-rows: 50px 285px 75px;
+    grid-template-columns: 263px 263px;
+    grid-template-areas:
+            "title_form title_form"
+            "info note"
+            "buttons buttons";
+}
+
+#titleForm { /* стили для заголовка формы */
+    grid-area: title_form;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 20px;
+    background-color: #4c80d8;
+    color: white;
+    text-transform: uppercase;
+}
+
+#sendButton { /* стили для кнопки отправки формы */
+    border: 2px solid #feb032;
+    background-color: #feb032;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    border-radius: 4px;
+}
+
+#closeButton { /* стили для кнопки закрытия формы */
+    margin-right: 10px;
+    border: 2px solid #e8e8e8;
+    border-radius: 4px;
+    background-color: #e8e8e8;
+    color: #757f75;
+    width: 90px;
+}
+
+#info { /* стили для блоков с полями ввода */
+    grid-area: info;
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    gap: 20px;
+}
+
+label { /* стили для заголовков к полям ввода */
+    color: #2f384d;
+    font-size: 14px;
+}
+
+#note { /* стили для области описания продукта */
+    padding-top: 12px;
+    grid-area: note;
+    background-color: white;
+
+}
+
+#buttons { /* стили для области отправки и закрытия формы и пометки об обязательных полях */
+    grid-area: buttons;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    gap: 20px;
+}
+
+#btn { /* стили для области кнопок отправки и закрытия формы */
+    display: flex;
+    justify-content: space-between;
+}
+
+.infoFields { /* стили для отдельных групп полей ввода */
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    gap: 5px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.infoFields input { /* стили для полей ввода в форме */
+    border: 2px #e3856e solid;
+    border-radius: 5px;
+    height: 30px;
+}
+
+textarea { /* стили для тега поля ввода текста */
+    border: 1px #d4d5d5 solid;
+    border-radius: 5px;
+}
+
+footer { /* стили для подвала сайта */
+    grid-area: footer;
+    background: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

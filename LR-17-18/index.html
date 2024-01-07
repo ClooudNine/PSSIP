@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru" style="width: 100%; height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа №17 В. О. Сырель</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+<p style="font-size: 2em; font-weight: bold">Регистрация:</p>
+<div style="border: 1px solid black; border-radius: 10px; padding: 20px">
+    <form id="register" name="register" style="display: flex; flex-direction: column; gap: 10px">
+        <label>
+            E-mail:
+            <input id="emailInput" type="email" required name="email" placeholder="example@gmail.com">
+        </label>
+        <label>
+            Пароль:
+            <input id="passwordInput" type="password" name="password">
+        </label>
+        <label>
+            Сразу войти в систему
+            <input type="checkbox" name="entry_in_system">
+        </label>
+        <div>
+            Выберите тип верификации:
+
+            <input type="radio" id="contactChoice2" name="contact" value="Телефон" />
+            <label for="contactChoice2">Телефон</label>
+
+            <input type="radio" id="contactChoice3" name="contact" value="Почта" />
+            <label for="contactChoice3">Почта</label>
+        </div>
+        <label for="level-select">Ваш уровень</label>
+        <select name="level" id="level-select">
+            <option value="">-- Выберите уровень --</option>
+            <option value="Новичок">Новичок</option>
+            <option value="Средний">Средний</option>
+            <option value="Продвинутый">Продвинутый</option>
+        </select>
+        <label for="story">Расскажите о себе:</label>
+        <textarea id="story" name="story" rows="5" cols="33" placeholder="Меня зовут..."></textarea>
+        <button type="submit">Регистрация</button>
+    </form>
+</div>
+</body>
+<script>
+    function serializeForm(formNode) {
+        return new FormData(formNode)
+    }
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        const email = document.getElementById('emailInput').value;
+        const emailPattern = /\S+@\S+\.\S+/;
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\\\-={}\[\]:;"'<>,.?/]).{7,}$/;
+        if (email === '') {
+            alert('Введите адрес электронной почты');
+            return;
+        } else if (!emailPattern.test(email)) {
+            alert('Введите корректный адрес электронной почты');
+            return;
+        }
+        const password = document.getElementById('passwordInput').value;
+        if (!passwordRegex.test(password)) {
+            alert("Пароль не соответствует требованиям");
+            return;
+        }
+        const data = serializeForm(applicantForm);
+        const iterator = data.entries();
+        let formDataString = '';
+        for (const pair of iterator) {
+            formDataString += pair[0] + ': ' + pair[1] + '\n';
+        }
+        alert(formDataString);
+    }
+
+    const text = 'Пример текста для работы с регулярными выражениями';
+
+    // Примеры флагов: g (глобальный поиск), i (игнорировать регистр)
+    const regex = /регулярными/gi;
+
+    // Метод test() - проверяет соответствие регулярному выражению
+    console.log(regex.test(text)); // Вернет true
+
+    // Метод exec() - ищет соответствие и возвращает результаты
+    console.log(regex.exec(text)); // Вернет массив с результатами
+
+    // Методы объекта String
+    const stringWithRegex = 'Работа с регулярными выражениями';
+
+    // split() - разделяет строку на массив с использованием регулярного выражения
+    console.log(stringWithRegex.split(/\s+/)); // Разделит строку по пробелам
+
+    // match() - возвращает массив с соответствиями регулярному выражению
+    console.log(stringWithRegex.match(/регулярными/gi));
+
+    // search() - возвращает индекс первого соответствия регулярному выражению
+    console.log(stringWithRegex.search(/с/i));
+
+    // replace() - заменяет соответствия регулярному выражению на указанную подстроку
+    console.log(stringWithRegex.replace(/регулярными/gi, 'регулярками'));
+
+    const applicantForm = document.getElementById('register');
+    applicantForm.addEventListener('submit', handleFormSubmit)
+</script>
+</html>
