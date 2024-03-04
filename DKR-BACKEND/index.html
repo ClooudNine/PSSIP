@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Карточка 2 Backend</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<form id="form" action="/submit-form" method="post">
+    <label>
+        <input name="firstName" placeholder="First Name (required)" required />
+    </label>
+    <label>
+        <input name="lastName" placeholder="Last Name (required)" required />
+    </label>
+    <label>
+        <input name="email" type="email" placeholder="Email (required)" required />
+    </label>
+    <label>
+        <input name="phone" type="tel" placeholder="Phone" />
+    </label>
+    <button type="submit">Send</button>
+</form>
+</body>
+</html>

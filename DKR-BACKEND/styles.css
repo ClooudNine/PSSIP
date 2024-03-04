@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#form > label > input {
+    border: 1px gray solid;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+}
+
+#form > button {
+    padding: 20px;
+}
